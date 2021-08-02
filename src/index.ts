@@ -1,7 +1,7 @@
 import { IBankDetails } from './interfaces/BankDetails';
 import BankCCIArray from './constants/BankCCI.json';
 
-const getBank = (bankIdentifier: string) => {
+export const getBankFromCCI = (bankIdentifier: string) => {
   return BankCCIArray.find((BankCCI) =>  BankCCI.id === bankIdentifier)?.name;
 }
 
@@ -11,7 +11,7 @@ export const getDetailsFromCCI = (cci: string): IBankDetails => {
   }
 
   const bankIdentifier = cci.substring(0, 3);
-  const bank = getBank(bankIdentifier);
+  const bank = getBankFromCCI(bankIdentifier);
 
   if (!bank) {
     throw new Error("Unknown Bank Identifier");
