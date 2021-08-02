@@ -1,0 +1,30 @@
+[
+    {
+        "name": "BCP",
+        "id": "002"
+    },
+    {
+        "name": "INTERBANK",
+        "id": "003"
+    },
+    {
+        "name": "SCOTIABANK",
+        "id": "009"
+    },
+    {
+        "name": "BBVA",
+        "id": "011"
+    },
+    {
+        "name": "BANCO DE LA NACION",
+        "id": "018"
+    },
+    {
+        "name": "BANBIF",
+        "id": "038"
+    },
+    {
+        "name": "MI BANCO",
+        "id": "049"
+    }
+]

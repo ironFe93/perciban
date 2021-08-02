@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p .",
-    "test": "jest --forceExit --verbose --testTimeout=50000 --coverage"
+    "test": "jest --verbose --coverage"
   },
   "dependencies": {
     "eslint": "^7.32.0",
@@ -26,5 +26,19 @@
     "@types/node": "^16.4.10",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.spec.ts": [
+      "jest --bail --findRelatedTests"
+    ],
+    "**/*.ts": [
+      "eslint . --fix",
+      "prettier --write"
+    ]
   }
 }
