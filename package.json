@@ -6,6 +6,10 @@
   "repository": "git@github.com:ironFe93/perciban.git",
   "author": "Christos <christos@b89.io>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest --forceExit --verbose --testTimeout=50000 --coverage"
+  },
   "dependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",

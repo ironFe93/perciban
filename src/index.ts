@@ -17,7 +17,7 @@ export const getDetailsFromCCI = (cci: string): IBankDetails => {
     throw new Error("Unknown Bank Identifier");
   }
 
-  switch (bankIdentifier) {
+  switch (bank) {
     case "BCP":
       const accountTypeDigit = cci.substring(6, 7);
       if (accountTypeDigit === '1') {
@@ -63,7 +63,7 @@ export const getDetailsFromCCI = (cci: string): IBankDetails => {
         accountNumber: '0' + cci.substring(7, 18),
         cci,
       };
-    case "MIBANCO":
+    case "MI BANCO":
       return {
         bank,
         accountNumber: cci.substring(8, 18),
