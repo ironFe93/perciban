@@ -48,7 +48,7 @@ export const getDetailsFromCCI = (cci: string): IBankDetails => {
     case "BBVA":
       return {
         bank,
-        accountNumber: '0' + '011' + '0' + cci.substring(3, 6) + cci.substring(8, 18),
+        accountNumber: `00110${cci.substring(3, 6)}${cci.substring(8, 18)}`,
         cci,
       };
     case "SCOTIABANK":
