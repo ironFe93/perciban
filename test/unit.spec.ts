@@ -1,9 +1,14 @@
-import { getDetailsFromCCI } from '../src/index';
+import { getDetailsFromCCI, getBankFromCCI } from '../src/index';
 
 describe('Banking Utilities', () => {
-  describe('Test \'getDetailsFromCCI\' ', () => {
+
+  describe('Test "getBankFromCCI', () => {
     beforeAll(() => jest.clearAllMocks());
 
+    it('should return a bank name, given a CCI code', () => {
+      const bank = getBankFromCCI('00219313660082002414');
+      expect(bank).toBeTruthy()
+    })
     describe('Errors', () => {
       it('should throw error if input is not numeric', () => {
         expect(() => {
@@ -23,6 +28,9 @@ describe('Banking Utilities', () => {
         }).toThrowError();
       });
     });
+  });
+  describe('Test \'getDetailsFromCCI\' ', () => {
+    beforeAll(() => jest.clearAllMocks());
 
     describe('BCP', () => {
       it('should return bank account details for account type Ahorro currency PEN', () => {

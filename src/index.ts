@@ -1,21 +1,21 @@
 import { IBankDetails } from './interfaces/BankDetails';
 import BankCCIArray from './constants/BankCCI.json';
 
-export const getBankFromCCI = (bankIdentifier: string) => {
-  return BankCCIArray.find((BankCCI) =>  BankCCI.id === bankIdentifier)?.name;
-}
-
-export const getDetailsFromCCI = (cci: string): IBankDetails => {
+export const getBankFromCCI = (cci: string) => {
   if (!cci.match(/[0-9]{20}/)) {
     throw new Error('CCI must be numeric and have exactly 20 digits');
   }
 
   const bankIdentifier = cci.substring(0, 3);
-  const bank = getBankFromCCI(bankIdentifier);
-
+  const bank = BankCCIArray.find((BankCCI) =>  BankCCI.id === bankIdentifier)?.name;
   if (!bank) {
     throw new Error("Unknown Bank Identifier");
   }
+  return bank;
+}
+
+export const getDetailsFromCCI = (cci: string): IBankDetails => {
+  const bank = getBankFromCCI(cci);
 
   switch (bank) {
     case "BCP":
