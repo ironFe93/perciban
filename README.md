@@ -9,3 +9,15 @@ Herramienta para decifrar Numeros de Cuenta Peruanos con codigos CCI.
 
 Un CCI es una cadena de 20 dígitos, que consiste del Numero de Cuenta Bancario en adición a una serie de dígitos. Este CCI se usa para operaciones cruzadas entre bancos.
 Lo que hace esta herramienta es reconocer una cadena de 20 dígitos como un CCI y luego transformarlo a su numero de cuenta correspondiente.
+
+HOW TO USE:
+
+This library exposes two functions:
+
+getBankFromCCI: 
+
+Expects a correct CCI, returns a string containing the CCI bank name
+
+getDetailsFromCCI:
+
+Expects a correct CCI, return an object containing the name of the bank, the account number, and if available, the currency of the account and the type of account.
