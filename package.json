@@ -2,7 +2,7 @@
   "name": "perciban",
   "version": "0.1.0",
   "description": "Peruvian CCI to BAN converter",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "git@github.com:ironFe93/perciban.git",
   "author": "Christos <christos@b89.io>",
   "license": "MIT",
